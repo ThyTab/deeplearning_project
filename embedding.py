@@ -8,11 +8,11 @@ def dm01():
     words = jieba.lcut(text)
     print(words)
     #创建词嵌入层
-    embed = nn.Embedding(len(words), 10)   #词表大小为len(words)，每个词向量维度为10
+    embed = nn.Embedding(len(words), 10)   #词表大小为len(words)，每个词向量维度为10   此为随机初始化的词向量，实际应用中需要训练得到
     #将文本转换为索引
     for i, word in enumerate(words):
         word_vector = embed(torch.tensor(i))   #随机的，每次都不一样
-        print(word, word_vector)
+        print(word, word_vector) 
 
 if __name__ == "__main__":
     dm01()
